@@ -7,6 +7,7 @@ package javaapplication4;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 
 
@@ -24,6 +25,7 @@ public class JavaApplication4 {
     private JPanel panel;
     private JButton button;
     private JLabel label;
+    private Graphics g;
     
     public JavaApplication4(){
         gui();
@@ -36,9 +38,15 @@ public class JavaApplication4 {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //this enables you to close the JFrame
         
         panel = new JPanel();
-        panel.setBackground(Color.BLACK);
+        //panel.setBackground(Color.BLACK);
         
         frame.add(panel);
+        
+        g = new Graphics();
+        g.setColor(Color.red);
+        g.fillOval(0, 0, 100, 100);
+        
+        panel.add(g);
         
     }
     
@@ -46,6 +54,8 @@ public class JavaApplication4 {
     public static void main(String[] args) {
         // TODO code application logic here
         new JavaApplication4();
+
     }
     
 }
+
