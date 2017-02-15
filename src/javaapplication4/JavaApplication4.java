@@ -17,12 +17,8 @@ import java.util.ArrayList;
  */
 public class JavaApplication4 {
 
-    /**
-     * @param args the command line arguments
-     */
-    
     private JFrame frame;
-    private JPanel panel;
+    private CirclePanel panel;
     private JButton button;
     private JLabel label;
     private Graphics g;
@@ -31,22 +27,17 @@ public class JavaApplication4 {
         gui();
     }
     
-    public void gui(){
+    private void gui(){
         frame = new JFrame("Frame");
         frame.setVisible(true);
         frame.setSize(600, 400);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //this enables you to close the JFrame
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); //this enables you to close the JFrame
         
-        panel = new JPanel();
+        panel = new CirclePanel();
         //panel.setBackground(Color.BLACK);
-        
+
         frame.add(panel);
-        
-        g = panel.getGraphics();
 
-   
-
-        
     }
     
     
@@ -55,12 +46,17 @@ public class JavaApplication4 {
         new JavaApplication4();
 
     }
-    
-    protected void paintComponent(Graphics g) {
 
-        g.setColor(Color.red);
-        g.fillOval(0, 0, 100, 100);
-        
+    class CirclePanel extends JPanel {
+        public CirclePanel(){
+            super();
+        }
+        protected void paintComponent(Graphics g) {
+
+            g.setColor(Color.red);
+            g.fillOval(0, 0, 100, 100);
+
+        }
     }
     
 }
