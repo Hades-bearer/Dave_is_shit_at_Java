@@ -42,11 +42,10 @@ public class JavaApplication4 {
         
         frame.add(panel);
         
-        g = new Graphics();
-        g.setColor(Color.red);
-        g.fillOval(0, 0, 100, 100);
-        
-        panel.add(g);
+        g = panel.getGraphics();
+
+   
+
         
     }
     
@@ -55,6 +54,13 @@ public class JavaApplication4 {
         // TODO code application logic here
         new JavaApplication4();
 
+    }
+    
+    protected void paintComponent(Graphics g) {
+
+        g.setColor(Color.red);
+        g.fillOval(0, 0, 100, 100);
+        
     }
     
 }
