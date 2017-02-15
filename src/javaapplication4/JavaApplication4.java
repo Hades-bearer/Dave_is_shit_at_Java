@@ -42,7 +42,7 @@ public class JavaApplication4 {
         
         frame.add(panel);
         
-        g = new Graphics();
+        g = panel.getGraphics();
         g.setColor(Color.red);
         g.fillOval(0, 0, 100, 100);
         
